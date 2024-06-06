@@ -3,17 +3,18 @@ package com.capgemini.wsb.fitnesstracker.training.api;
 import com.capgemini.wsb.fitnesstracker.training.internal.ActivityType;
 import com.capgemini.wsb.fitnesstracker.user.api.User;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
+import lombok.Data;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.sql.Timestamp;
 import java.util.Date;
+
 @Entity
 @Table(name = "trainings")
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString
+@Data
 public class Training {
 
     @Id
@@ -40,6 +41,10 @@ public class Training {
     @Column(name = "average_speed")
     private double averageSpeed;
 
+    @Column(name = "date")
+    private Timestamp date;
+
+    public Training() {}
     public Training(
             final User user,
             final Date startTime,
@@ -54,4 +59,5 @@ public class Training {
         this.distance = distance;
         this.averageSpeed = averageSpeed;
     }
+
 }

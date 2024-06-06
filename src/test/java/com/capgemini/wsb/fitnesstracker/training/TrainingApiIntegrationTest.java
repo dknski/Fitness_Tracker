@@ -135,7 +135,9 @@ class TrainingApiIntegrationTest extends IntegrationTestBase {
 
         String requestBody = """
                 {
-                    "userId": "%s",
+                    "user": {
+                        "id": %d
+                    },
                     "startTime": "2024-04-01T11:00:00",
                     "endTime": "2024-04-01T11:00:00",
                     "activityType": "RUNNING",

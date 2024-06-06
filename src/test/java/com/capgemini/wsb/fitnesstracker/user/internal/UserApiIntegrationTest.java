@@ -150,7 +150,7 @@ class UserApiIntegrationTest extends IntegrationTestBase {
                 USER_BIRTHDATE,
                 USER_EMAIL);
 
-        mockMvc.perform(post("/v1/users")
+        mockMvc.perform(post("/v1/users/create")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(creationRequest))
                 .andDo(log())
